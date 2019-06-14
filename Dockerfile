@@ -10,3 +10,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip
+
+RUN git clone https://github.com/veo-ibd/veoibd-data-pipeline.git
+WORKDIR /veoibd-data-pipeline
+RUN python3 setup.py install
