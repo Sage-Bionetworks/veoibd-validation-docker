@@ -7,10 +7,14 @@ RUN apt-get update \
        python3-setuptools \
        python3-pip \
        python3-pandas \
+       python3-dev \ 
+       wget \
+       build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip
 
-RUN git clone https://github.com/veo-ibd/veoibd-data-pipeline.git
-WORKDIR /veoibd-data-pipeline
+RUN wget https://github.com/veo-ibd/veoibd-data-pipeline/archive/master.tar.gz
+RUN tar xvzf master.tar.gz
+WORKDIR /veoibd-data-pipeline-master
 RUN python3 setup.py install
