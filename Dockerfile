@@ -9,6 +9,7 @@ RUN apt-get update \
        python3-pandas \
        python3-dev \ 
        wget \
+       git \
        build-essential \
     && rm -rf /var/lib/apt/lists/*
 
