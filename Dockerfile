@@ -16,5 +16,6 @@ RUN apt-get update \
 RUN pip3 install --upgrade pip
 
 COPY requirements.txt /requirements.txt
+COPY config.json /config.json
 
 RUN pip install -r /requirements.txt
