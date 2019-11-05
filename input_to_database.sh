@@ -8,4 +8,4 @@ EC2_REGION="`echo \"$EC2_AVAIL_ZONE\" | sed -e 's:\([0-9][0-9]*\)[a-z]*\$:\\1:'`
 aws ssm get-parameters --names veoibd-aws-infra/synapseConfig --with-decryption --region ${EC2_REGION} --output text --query "Parameters[*].{Value:Value}" > /root/.synapseConfig
 
 # Run the database update proceess
-input_to_database.py --config /config.json main
+input_to_database.py --format_registry_packages veoibddatasubmission --config /config.json main
