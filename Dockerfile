@@ -9,6 +9,7 @@ RUN apt-get update \
        python3-pandas \
        python3-dev \ 
        wget \
+       git \
        build-essential \
     && rm -rf /var/lib/apt/lists/*
 
@@ -23,3 +24,5 @@ RUN chmod +x /validate.sh
 
 COPY input_to_database.sh /input_to_database.sh
 RUN chmod +x /input_to_database.sh
+
+COPY config.json /config.json
