@@ -1,3 +1,3 @@
 git+https://www.github.com/Sage-Bionetworks/synapsePythonClient.git@v1.9.4-develop
-git+https://github.com/veo-ibd/Genie.git@hotfix-remove-vcf-process-filter#genie-4.0.1-dev
+git+https://github.com/veo-ibd/Genie.git@master
 git+https://www.github.com/veo-ibd/veoibd-data-submission.git@master
