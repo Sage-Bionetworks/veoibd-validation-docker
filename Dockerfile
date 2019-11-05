@@ -8,6 +8,7 @@ RUN apt-get update \
        python3-pip \
        python3-dev \ 
        wget \
+       curl \
        git \
        build-essential \
     && rm -rf /var/lib/apt/lists/*
