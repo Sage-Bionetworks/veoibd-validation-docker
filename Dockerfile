@@ -14,7 +14,12 @@ RUN apt-get update \
 
 RUN pip3 install --upgrade pip
 
-RUN wget https://github.com/veo-ibd/veoibd-data-pipeline/archive/master.tar.gz
-RUN tar xvzf master.tar.gz
-WORKDIR /veoibd-data-pipeline-master
-RUN python3 setup.py install
+COPY requirements.txt /requirements.txt
+
+RUN pip3 install -r /requirements.txt
+
+COPY validate.sh /validate.sh
+RUN chmod +x /validate.sh
+
+COPY input_to_database.sh /input_to_database.sh
+RUN chmod +x /input_to_database.sh
